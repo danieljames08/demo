@@ -1,0 +1,33 @@
+<p>home works!</p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi distinctio ipsa deserunt quisquam ab nisi obcaecati corrupti voluptates. Possimus veritatis corrupti eum voluptates voluptatem unde obcaecati ex illum necessitatibus consectetur.
+
+<button>home</button>
+
+
+<mat-card>
+  <h2>Enter name and job</h2>
+  <form [formGroup]="addUserForm" (ngSubmit)="saveUser()" >
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input matInput placeholder="Job" formControlName="job" />
+    </mat-form-field>
+    <br />
+    <button [disabled]="!addUserForm.valid" mat-raised-button type="submit">
+      Add User
+    </button>
+  </form>
+</mat-card>
+<mat-card>
+  <h2>List of Users</h2>
+  <ng-container *ngFor="let user of users">
+    {{ user.name }} - {{ user.job }}<br />
+   
+  </ng-container>
+</mat-card>
+
+
+
+

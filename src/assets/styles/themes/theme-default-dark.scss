@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import './theme-base';
+
+:root 
+{
+--container-bg: #00b; // or any global you wish to share with components 
+--btn-color:red;
+}
+$primary: mat-palette($mat-blue-grey);
+$accent:  mat-palette($mat-purple, A200, A100, A400);
+$warn:    mat-palette($mat-deep-orange);
+$theme:   mat-dark-theme($primary, $accent, $warn);
+
+
+
+@include theming($theme);
